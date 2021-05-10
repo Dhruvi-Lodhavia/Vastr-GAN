@@ -100,7 +100,7 @@ def train(dataloader,netG,netD,text_encoder,optimizerG,optimizerD,state_epoch,ba
             imags, captions, cap_lens, class_ids, keys = prepare_data(data)
             all_cap=[]
             for key in keys:
-              filepath = '%s/text/%s.txt' % ('./FY_GAN/data/fashion', key)
+              filepath = '%s/text/%s.txt' % ('./FY-GAN/data/fashion', key)
               with open(filepath, "r",encoding="utf8", errors='ignore') as f:
                 c=f.readlines()             
                 cnt = 0
