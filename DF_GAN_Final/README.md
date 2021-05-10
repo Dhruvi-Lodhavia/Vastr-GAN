@@ -38,8 +38,9 @@ cd DF-GAN/code/
 **Train DF-GAN models on Indian fashion dataset:**
   - For fashion dataset: `python main.py --cfg cfg/fashion.yml`
 
-### Training YOLO
+### YOLO saved weights
 
+ - Custom trained yolo [weights](https://drive.google.com/file/d/1CS1PZeIawhd8fikFDy0WIYeBxR_RqfiF/view?usp=sharing) should be save in `YOLOv5` folder.
 
 ### Evaluating
 
@@ -50,6 +51,9 @@ cd DF-GAN/code/
 - Results will be saved in different folders inside  /ensemble_images
  
 **Classifying using YOLO**
+
+- Images from the four models will be saved in the folder `ensemble_images`. Image paths from this folder are given to `YOLOv5/yolo_testing.py`.
+- On running `pythonYOLOv5/yolo_testing.py` the desired image is stored as `YOLOv5/max.png`. This is the final image output corresponding to the text input description.
 
 
 **FID Calculation**
