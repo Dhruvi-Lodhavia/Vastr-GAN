@@ -1,1 +1,0 @@
-# DF-GAN_Indian_Fashion_Dataset
