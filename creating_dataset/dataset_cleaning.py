@@ -1,8 +1,10 @@
 import os  
-
+# this file is used to remove stopwords to clean the text descriptions
+# stop words are found by crittically examining the dataset
 def should_remove_line(line, stop_words):
     return any([word in line for word in stop_words])
 len = 400
+# we iterate over all lines in a text file, remove the stopwords and then save the final text descriptions
 for i in range(len):
     stop_words = [ "Features:","returned","Disclaimer:","Special Technique/Craft:", "Craft:","About the Brand","HEIQ VIROBLOCK","Features","Disclaimer","PRODUCT DETAILS","ORIGIN","origin","Origin:","Blouse Piece"]
     stop_words1 =["Design Details","Design Detail","blouse piece"]
