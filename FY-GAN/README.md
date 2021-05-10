@@ -45,9 +45,9 @@ git clone https://github.com/Dhruvi-Lodhavia/Text-to-Image-Synthesis-for-Indian-
 
 **Evaluate DF-GAN models:**
 
-- Download all the models on distributed dataset and save it in inside /ensemble_models
+- Download all the models on distributed dataset and save it in inside ensemble_models/
 - To evaluate our DF-GAN on distributed training dataset, change B_VALIDATION to True in the fashion.yml. and then run `python main.py --cfg cfg/fashion.yml`
-- Results will be saved in different folders inside  /ensemble_images
+- Results will be saved in different folders inside  ensemble_images/
  
 **Classifying using YOLO**
 
