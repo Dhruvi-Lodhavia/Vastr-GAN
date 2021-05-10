@@ -40,7 +40,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Train a DAMSM network')
     parser.add_argument('--cfg', dest='cfg_file',
                         help='optional config file',
-                        default='./DF-GAN/code/cfg/fashion.yml', type=str)
+                        default='./FY-GAN/code/cfg/fashion.yml', type=str)
     parser.add_argument('--gpu', dest='gpu_id', type=int, default=0)
     parser.add_argument('--data_dir', dest='data_dir', type=str, default='')
     parser.add_argument('--manualSeed', type=int, help='manual seed')
@@ -94,13 +94,13 @@ def sampling(text_encoder, netG, dataloader,device,f,filename,model_dir):
 
 ###For generating images for training dataset
 def train(dataloader,netG,netD,text_encoder,optimizerG,optimizerD,state_epoch,batch_size,device):
-    loss_file = open("./DF-GAN/losses8.txt", "w+")
+    #loss_file = open("./FY-GAN/losses8.txt", "w+")
     for epoch in range(state_epoch+1, cfg.TRAIN.MAX_EPOCH+1):    
         for step, data in enumerate(dataloader, 0):
             imags, captions, cap_lens, class_ids, keys = prepare_data(data)
             all_cap=[]
             for key in keys:
-              filepath = '%s/text/%s.txt' % ('./DF-GAN/data/fashion', key)
+              filepath = '%s/text/%s.txt' % ('./FY_GAN/data/fashion', key)
               with open(filepath, "r",encoding="utf8", errors='ignore') as f:
                 c=f.readlines()             
                 cnt = 0
@@ -184,7 +184,7 @@ def train(dataloader,netG,netD,text_encoder,optimizerG,optimizerD,state_epoch,ba
                         normalize=True)
          
         #storing captions of particular batch
-        file_cap='./DF-GAN/caps/'+str(epoch)+'txt'
+        file_cap='./FY-GAN/caps/'+str(epoch)+'txt'
         with open(file_cap, 'w') as filehandle:
           for listitem in all_cap:
               filehandle.write('%s\n' % listitem)
@@ -198,12 +198,12 @@ def train(dataloader,netG,netD,text_encoder,optimizerG,optimizerD,state_epoch,ba
                 'epoch': epoch,
                 'model_state_dict': netG.state_dict(),
                 'optimizer_state_dict': optimizerG.state_dict(),
-                }, './DF-GAN/models/%s/netG_%03d.pth' % (cfg.CONFIG_NAME, epoch))
+                }, './FY-GAN/models/%s/netG_%03d.pth' % (cfg.CONFIG_NAME, epoch))
             torch.save({
                 'epoch': epoch,
                 'model_state_dict': netD.state_dict(),
                 'optimizer_state_dict': optimizerD.state_dict(),
-                }, './DF-GAN/models/%s/netD_%03d.pth' % (cfg.CONFIG_NAME, epoch))     
+                }, './FY-GAN/models/%s/netD_%03d.pth' % (cfg.CONFIG_NAME, epoch))     
 
     return count
 
@@ -291,19 +291,19 @@ if __name__ == "__main__":
 
     optimizerG = torch.optim.Adam(netG.parameters(), lr=0.0001, betas=(0.0, 0.9))
     optimizerD = torch.optim.Adam(netD.parameters(), lr=0.0004, betas=(0.0, 0.9))  
-    # checkpoint = torch.load("./DF-GAN/models/bird/netG_030.pth")
+    # checkpoint = torch.load("./FY-GAN/models/bird/netG_030.pth")
     # netG.load_state_dict(checkpoint['model_state_dict'])
     # optimizerG.load_state_dict(checkpoint['optimizer_state_dict'])
     # state_epoch = checkpoint['epoch']
-    # checkpoint2 = torch.load("./DF-GAN/models/bird/netD_030.pth")
+    # checkpoint2 = torch.load("./FY-GAN/models/bird/netD_030.pth")
     # netD.load_state_dict(checkpoint2['model_state_dict'])
     # optimizerD.load_state_dict(checkpoint2['optimizer_state_dict'])
     # state_epoch = checkpoint2['epoch']
     if cfg.B_VALIDATION:
             #storing images of different models
-            model_dir = "DF-GAN/ensemble_images"
+            model_dir = "FY-GAN/ensemble_images"
             # Directory of saved mpdels
-            directory = 'DF-GAN/ensemble_models'
+            directory = 'FY-GAN/ensemble_models'
             for filename in os.listdir(directory):
                 f = os.path.join(directory, filename)
                 count = sampling(text_encoder, netG, dataloader,device,f,filename,model_dir)  # generate images for the whole valid dataset
