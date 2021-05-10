@@ -1,3 +1,8 @@
+import os
+import sys
+import numpy as np
+import pandas as pd
+
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -13,10 +18,6 @@ import torch.utils.data as data
 from torch.autograd import Variable
 import torchvision.transforms as transforms
 
-import os
-import sys
-import numpy as np
-import pandas as pd
 from PIL import Image
 import numpy.random as random
 if sys.version_info[0] == 2:
@@ -45,7 +46,7 @@ def prepare_data(data):
     class_ids = class_ids[sorted_cap_indices]
     # sent_indices = sent_indices[sorted_cap_indices]
     keys = [keys[i] for i in sorted_cap_indices.numpy()]
-    # print('keys', type(keys), keys[-1])  # list
+    
     if cfg.CUDA:
         captions = Variable(captions).cuda()
         sorted_cap_lens = Variable(sorted_cap_lens).cuda()
@@ -150,9 +151,7 @@ class TextDataset(data.Dataset):
             #print(filenames[i])
             cap_path = '%s/text/%s.txt' % (data_dir, filenames[i])
             with open(cap_path, "r") as f:
-                # captions = f.read().decode('utf8').split('\n')
                 captions = f.read()
-                #print(captions)
                 cnt = 0
                 for cap in captions:
                     if len(cap) == 0:
@@ -162,7 +161,6 @@ class TextDataset(data.Dataset):
                     # and drops everything else
                     tokenizer = RegexpTokenizer(r'\w+')
                     tokens = tokenizer.tokenize(cap.lower())
-                    # print('tokens', tokens)
                     if len(tokens) == 0:
                         print('cap', cap)
                         continue
@@ -237,7 +235,6 @@ class TextDataset(data.Dataset):
                 print('Save to: ', filepath)
         else:
             with open(filepath, 'rb') as f:
-                # print("HIII")
                 x = pickle.load(f)
                 train_captions, test_captions = x[0], x[1]
                 print(train_captions)
@@ -246,11 +243,9 @@ class TextDataset(data.Dataset):
                 n_words = len(ixtoword)
                 print('Load from: ', filepath)
         if split == 'train':
-            # print(train_names)
             # a list of list: each list contains
             # the indices of words in a sentence
             captions = train_captions
-            # print(len(train_captions))
             filenames = train_names
         else:  # split=='test'
             captions = test_captions
@@ -297,21 +292,14 @@ class TextDataset(data.Dataset):
         return x, x_len
 
     def __getitem__(self, index):
-        #
-        #print(self.filenames)
-        #print(self.bbox)
+        
         key = self.filenames[index]
         key = key.rstrip("\n")
-        #key=key[-8]
         cls_id = self.class_id[index]
-        #
-        #print(key)
         if self.bbox is not None:
-
             bbox = self.bbox[key]
             data_dir = '%s/CUB_200_2011' % self.data_dir
         else:
-            print("hh")
             bbox = None
             data_dir = self.data_dir
         #
@@ -320,8 +308,6 @@ class TextDataset(data.Dataset):
                         bbox, self.transform, normalize=self.norm)
         # random select a sentence
         sent_ix = random.randint(0, self.embeddings_num)
-        # print(self.embeddings_num)
-        # print(self.captions)
         new_sent_ix = index * self.embeddings_num + sent_ix
         caps, cap_len = self.get_caption(new_sent_ix)
         return imgs, caps, cap_len, cls_id, key
