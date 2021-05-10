@@ -30,7 +30,9 @@ cd DF-GAN/code/
 3. Download [coco](http://cocodataset.org/#download) dataset and extract the images to `data/coco/`
 
 ### Pre processing data
-
+  - Dataset is collected from e-commerce websites using `python creating_dataset/selenium_trial.py`
+  - Text descriptions are cleaned using `python creating_dataset/dataset_cleaning.py`
+  - Bounding boxes and class info text files are generated using `creating_dataset/images.py`
 ### Training DF-GAN
 
 **Train DF-GAN models on Indian fashion dataset:**
