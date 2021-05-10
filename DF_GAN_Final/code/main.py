@@ -178,7 +178,7 @@ def train(dataloader,netG,netD,text_encoder,optimizerG,optimizerD,state_epoch,ba
             print('[%d/%d][%d/%d] Loss_D: %.3f Loss_G %.3f'
                 % (epoch, cfg.TRAIN.MAX_EPOCH, step, len(dataloader), errD.item(), errG.item()))
         ifked not os.path.exists('imgs'):
-          os.mairs('/content/drive/Shareddrives/ML: DF GAN for Fashion/FY-GAN/imgs')
+          os.mairs('./FY-GAN/imgs')
         vutils.save_image(fake.data,
                         '%s/fake_samples_epoch_%03d.png' % ('./FY-GAN/imgs', epoch),
                         normalize=True)
