@@ -1,4 +1,4 @@
-
+# this python script is used to generate necessary bounding box files, class info files
 from PIL import Image
 length = [148,107,221,94,93,69,273,90,186,82,105,175,183]
 class_name = ['Anarkali_women','banarasi_sarees_women','casual_Shirt_men','casual_Shirt_women','formal_Shirt_men','formal_Shirt_women','printed_kurtas_men','printed_kurtis_women','round_neck_tshirt_men','round_neck_tshirt_women','Sherwani_men','solid_straight_kurtas_men','solid_straight_kurti']
@@ -16,7 +16,7 @@ for i in range(len(length)):
     for j in range(0,length[i]):
         f2.write(str(image_num)+str(" ")+str(class_label))
         f2.write("\n")
-        file = str(image_num)+" "+str(class_name[i])+"/"+str(class_name[i])+ str(j)+"jpg"
+        file = str(image_num)+" "+str(class_name[i])+"/"+str(class_name[i])+ str(j)+".jpg"
         f.write(file)
         f.write("\n")
 
