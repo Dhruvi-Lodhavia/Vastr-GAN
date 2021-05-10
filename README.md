@@ -1,8 +1,5 @@
-# DF-GAN: Deep Fusion Generative Adversarial Networks for Text-to-Image Synthesis
+# Text-to-Image Synthesis For Indian Fashion Dataset
 
-(A novel and effective one-stage Text-to-Image Backbone)
-
-Official Pytorch implementation for our paper [DF-GAN: Deep Fusion Generative Adversarial Networks for Text-to-Image Synthesis](https://arxiv.org/abs/2008.05865) by Ming Tao, [Hao Tang](https://scholar.google.com/citations?user=9zJkeEMAAAAJ&hl=en), [Songsong Wu](https://www.researchgate.net/profile/Songsong_Wu), [Nicu Sebe](https://scholar.google.com/citations?user=tNtjSewAAAAJ&hl=en), [Fei Wu](https://scholar.google.com/citations?user=tgeCjhEAAAAJ&hl=en), [Xiao-Yuan Jing](https://scholar.google.com/citations?hl=en&user=2IInQAgAAAAJ). 
 
 <img src="framework.png" width="900px" height="448px"/>
 
@@ -13,12 +10,12 @@ Official Pytorch implementation for our paper [DF-GAN: Deep Fusion Generative Ad
 - easydict
 - nltk
 - scikit-image
-- A titan xp (set nf=32 in *.yaml) or a V100 32GB (set nf=64 in *.yaml)
+- 
 ### Installation
 
 Clone this repo.
 ```
-git clone https://github.com/tobran/DF-GAN
+git clone https://github.com/Dhruvi-Lodhavia/DF-GAN_Indian_Fashion
 cd DF-GAN/code/
 ```
 
@@ -27,30 +24,18 @@ cd DF-GAN/code/
 2. Download the [birds](http://www.vision.caltech.edu/visipedia/CUB-200-2011.html) image data. Extract them to `data/birds/`
 3. Download [coco](http://cocodataset.org/#download) dataset and extract the images to `data/coco/`
 
+### Training 
 
-### Pre-trained text encoder
-1. Download the [pre-trained text encoder](https://drive.google.com/open?id=1GNUKjVeyWYBJ8hEU-yrfYQpDOkxEyP3V) for CUB and save it to `DAMSMencoders/bird/inception/`
-2. Download the [pre-trained text encoder](https://drive.google.com/open?id=1zIrXCE9F6yfbEJIbNP5-YrEe2pZcPSGJ) for coco and save it to `DAMSMencoders/coco/inception/`
-
----
-### Training
-
-**Train DF-GAN models:**
-  - For bird dataset: `python main.py --cfg cfg/bird.yml`
-  - For coco dataset: `python main.py --cfg cfg/coco.yml`
-
-- `*.yml` files are example configuration files for training/evaluation our models.
+**Train DF-GAN models on Indian fashion dataset:**
+  - For fashion dataset: `python main.py --cfg cfg/fashion.yml`
 
 ### Evaluating
 
-**Dwonload Pretrained Model**
-- [DF-GAN for bird](https://drive.google.com/file/d/1svVTyKWj5B1J82rEiZILUS289DsmT6U7/view?usp=sharing). Download and save it to `models/bird/`
-- [DF-GAN for coco](https://drive.google.com/file/d/15llod5eTjjdzDTXQroJG_eh2c-GrW9H7/view?usp=sharing). Download and save it to `models/coco/`
-
 **Evaluate DF-GAN models:**
 
-- To evaluate our DF-GAN on CUB, change B_VALIDATION to True in the bird.yml. and then run `python main.py --cfg cfg/bird.yml`
-- To evaluate our DF-GAN on coco, change B_VALIDATION to True in the coco.yml. and then run `python main.py --cfg cfg/coco.yml`
+- Download all the models on distributed dataset and save it in inside DF-GAN_Indian_Fashion/ensemble_models
+- To evaluate our DF-GAN on distributed training dataset, change B_VALIDATION to True in the fashion.yml. and then run `python main.py --cfg cfg/fashion.yml`
+- Results will be saved 
 - We compute inception score for models trained on birds using [StackGAN-inception-model](https://github.com/hanzhanggit/StackGAN-inception-model).
 - We compute FID for CUB and coco using [DM-GAN/eval/FID](https://github.com/MinfengZhu/DM-GAN/tree/master/eval/FID). 
 
