@@ -1,0 +1,13 @@
+0 Anarkali_women
+1 banarasi_sarees_women
+2 casual_Shirt_men
+3 casual_Shirt_women
+4 formal_Shirt_men
+5 formal_Shirt_women
+6 printed_kurtas_men
+7 printed_kurtis_women
+8 round_neck_tshirt_men
+9 round_neck_tshirt_women
+10 Sherwani_men
+11 solid_straight_kurtas_men
+12 solid_straight_kurti

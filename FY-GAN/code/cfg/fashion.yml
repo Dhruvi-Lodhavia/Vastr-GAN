@@ -1,0 +1,27 @@
+CONFIG_NAME: 'fashion'
+
+DATASET_NAME: 'fashion'
+DATA_DIR: './FY-GAN/data/fashion'
+GPU_ID: 0
+WORKERS: 1
+
+
+B_VALIDATION: False # True  # False
+loss: 'hinge'
+
+TREE:
+    BRANCH_NUM: 1
+    BASE_SIZE: 256
+
+
+TRAIN:
+    NF: 32 # default 64
+    BATCH_SIZE: 24
+    MAX_EPOCH: 1001
+    NET_G: './FY-GAN/data/fashion/test'
+
+
+TEXT:
+    EMBEDDING_DIM: 256
+    CAPTIONS_PER_IMAGE: 1
+    DAMSM_NAME: './FY-GAN/DAMSMencoders/fashion/inception/text_encoder600.pth'
