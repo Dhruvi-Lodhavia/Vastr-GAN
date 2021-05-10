@@ -20,8 +20,8 @@
 
 Clone this repo.
 ```
-git clone https://github.com/Dhruvi-Lodhavia/DF-GAN_Indian_Fashion
-cd DF-GAN/code/
+git clone https://github.com/Dhruvi-Lodhavia/Text-to-Image-Synthesis-for-Indian-Fashion-Dataset
+
 ```
 
 ### Datasets Preparation
