@@ -1,3 +1,4 @@
+# this is used for web scraping images from Myntra using selenium library
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -7,18 +8,20 @@ import os
 import json
 import time
 driver = webdriver.Chrome(ChromeDriverManager().install())
-# driver = webdriver.Chrome('chromedriver')
+#go to the website
 driver.get('https://www.myntra.com/')
 time.sleep(5)
+#our search key(class)
 search_string = "round neck tshirt women"
 
+#pressing the button to search
 driver.find_element_by_class_name('desktop-searchBar').send_keys(search_string)
 driver.find_element_by_class_name('desktop-submit').click()
 links = []
 i = 1
 
 image_limit = 0
-
+# we continue to get links of images and go to the next page
 while(1):  
   
     for product_base in driver.find_elements_by_class_name('product-base'):
@@ -28,7 +31,7 @@ while(1):
         links.append(l)
         image_limit+=1
     try:
-        if(image_limit<= 175):
+        if(image_limit<=500):
             print("enter")
             # lim = lim + 50
             #driver.find_element_by_tag_name('//*[@id="desktopSearchResults"]/div[2]/section/div[2]/ul/li[12]').click()
@@ -43,7 +46,7 @@ while(1):
         break
         
 
-
+# after getting the links we go to each page and extract their descriptions and save image and text files in corresponding locations
 # print(links)
 content = []
 count =0
