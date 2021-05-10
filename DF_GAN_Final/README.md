@@ -1,7 +1,7 @@
 # Text-to-Image Synthesis For Indian Fashion Dataset
 
 
-<img src="framework.png" width="900px" height="448px"/>
+<img src="framework.jpg" width="900px" height="448px"/>
 
 ---
 ### Requirements
@@ -46,19 +46,6 @@ cd DF-GAN/code/
 ```
 
 ---
-### Citing DF-GAN
-
-If you find DF-GAN useful in your research, please consider citing our paper:
-
-```
-@article{ming2020DFGAN,
-  title={DF-GAN: Deep Fusion Generative Adversarial Networks for Text-to-Image Synthesis},
-  author={Ming Tao, Hao Tang, Songsong Wu, Nicu Sebe, Fei Wu, Xiao-Yuan Jing},
-  journal={arXiv preprint arXiv:2008.05865},
-  year={2020}
-}
-```
-The code is released for academic research use only. For commercial use, please contact [Ming Tao](mingtao2000@126.com).
 
 **Reference**
 
