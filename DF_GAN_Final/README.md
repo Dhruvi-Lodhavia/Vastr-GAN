@@ -1,7 +1,10 @@
 # Text-to-Image Synthesis For Indian Fashion Dataset
 
+## DF_GAN MODEL
 
 <img src="framework.jpg" width="900px" height="448px"/>
+
+## YOLO CLASSIFICATION
 
 <img src="yolo.jpg" /> 
 
@@ -26,10 +29,15 @@ cd DF-GAN/code/
 2. Download the [birds](http://www.vision.caltech.edu/visipedia/CUB-200-2011.html) image data. Extract them to `data/birds/`
 3. Download [coco](http://cocodataset.org/#download) dataset and extract the images to `data/coco/`
 
-### Training 
+### Pre processing data
+
+### Training DF-GAN
 
 **Train DF-GAN models on Indian fashion dataset:**
   - For fashion dataset: `python main.py --cfg cfg/fashion.yml`
+
+### Training YOLO
+
 
 ### Evaluating
 
@@ -37,7 +45,10 @@ cd DF-GAN/code/
 
 - Download all the models on distributed dataset and save it in inside /ensemble_models
 - To evaluate our DF-GAN on distributed training dataset, change B_VALIDATION to True in the fashion.yml. and then run `python main.py --cfg cfg/fashion.yml`
-- Results will be saved in different folders inside  /ensemble_images 
+- Results will be saved in different folders inside  /ensemble_images
+ 
+**Classifying using YOLO**
+
 
 **FID Calculation**
 
