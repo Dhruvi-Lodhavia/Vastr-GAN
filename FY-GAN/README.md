@@ -25,9 +25,8 @@ git clone https://github.com/Dhruvi-Lodhavia/Text-to-Image-Synthesis-for-Indian-
 ```
 
 ### Datasets Preparation
-1. Download the preprocessed metadata for [birds](https://drive.google.com/open?id=1O_LtUP9sch09QH3s_EBAgLEctBQ5JBSJ) [coco](https://drive.google.com/open?id=1rSnbIGNDGZeHlsUlLdahj0RJ9oo6lgH9) and save them to `data/`
-2. Download the [birds](http://www.vision.caltech.edu/visipedia/CUB-200-2011.html) image data. Extract them to `data/birds/`
-3. Download [coco](http://cocodataset.org/#download) dataset and extract the images to `data/coco/`
+1. Download the preprocessed metadata for [fashion](https://drive.google.com/file/d/1qWlIsyemCFMJ0STP6DANX5lduSPtYtFF/view?usp=sharing) and save them to `data/`
+
 
 ### Pre processing data
   - Dataset is collected from e-commerce websites using `python creating_dataset/selenium_trial.py`
