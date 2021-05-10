@@ -3,7 +3,7 @@
 
 <img src="framework.jpg" width="900px" height="448px"/>
 
-<img src="yolo.jpg" 
+<img src="yolo.jpg" /> 
 
 ---
 ### Requirements
