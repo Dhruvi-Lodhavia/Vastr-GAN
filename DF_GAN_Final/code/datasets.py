@@ -223,10 +223,10 @@ class TextDataset(data.Dataset):
         filepath = os.path.join(data_dir, 'captions.pickle')
         train_names = self.load_filenames(data_dir, 'train')
         test_names = self.load_filenames(data_dir, 'test')
+        #if pickle file does not exist create it
         if not os.path.isfile(filepath):
             train_captions = self.load_captions(data_dir, train_names)
             test_captions = self.load_captions(data_dir, test_names)
-
             train_captions, test_captions, ixtoword, wordtoix, n_words = \
                 self.build_dictionary(train_captions, test_captions)
             with open(filepath, 'wb') as f:
