@@ -10,7 +10,7 @@
 - easydict
 - nltk
 - scikit-image
-- 
+
 ### Installation
 
 Clone this repo.
@@ -33,11 +33,17 @@ cd DF-GAN/code/
 
 **Evaluate DF-GAN models:**
 
-- Download all the models on distributed dataset and save it in inside DF-GAN_Indian_Fashion/ensemble_models
+- Download all the models on distributed dataset and save it in inside /ensemble_models
 - To evaluate our DF-GAN on distributed training dataset, change B_VALIDATION to True in the fashion.yml. and then run `python main.py --cfg cfg/fashion.yml`
-- Results will be saved 
-- We compute inception score for models trained on birds using [StackGAN-inception-model](https://github.com/hanzhanggit/StackGAN-inception-model).
-- We compute FID for CUB and coco using [DM-GAN/eval/FID](https://github.com/MinfengZhu/DM-GAN/tree/master/eval/FID). 
+- Results will be saved in different folders inside  /ensemble_images 
+
+**FID Calculation**
+
+```
+!pip install pytorch-fid
+!python -m pytorch_fid "path_to_real_images_class" "path_to_generated_images_class"
+
+```
 
 ---
 ### Citing DF-GAN
