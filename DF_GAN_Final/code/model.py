@@ -11,7 +11,7 @@ class NetG(nn.Module):
         super(NetG, self).__init__()
         self.ngf = ngf
 
-        # layer1输入的是一个100x1x1的随机噪声, 输出尺寸(ngf*8)x4x4
+        # layer1
         self.fc = nn.Linear(nz, ngf*8*4*4)
         self.block0 = G_Block(ngf * 8, ngf * 8)#4x4
         self.block1 = G_Block(ngf * 8, ngf * 8)#4x4
@@ -156,9 +156,6 @@ class D_GET_LOGITS(nn.Module):
 
 
 
-
-
-# 定义鉴别器网络D
 class NetD(nn.Module):
     def __init__(self, ndf):
         super(NetD, self).__init__()
