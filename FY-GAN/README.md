@@ -25,7 +25,7 @@ git clone https://github.com/Dhruvi-Lodhavia/Text-to-Image-Synthesis-for-Indian-
 ```
 
 ### Datasets Preparation
-1. Download the preprocessed metadata for [fashion](https://drive.google.com/file/d/1qWlIsyemCFMJ0STP6DANX5lduSPtYtFF/view?usp=sharing) and save them to `data/`
+  - Download the preprocessed metadata for [fashion](https://drive.google.com/file/d/1qWlIsyemCFMJ0STP6DANX5lduSPtYtFF/view?usp=sharing) and save them to `data/`
 
 
 ### Pre processing data
