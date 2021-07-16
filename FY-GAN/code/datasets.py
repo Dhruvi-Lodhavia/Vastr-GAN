@@ -1,8 +1,3 @@
-import os
-import sys
-import numpy as np
-import pandas as pd
-
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -18,13 +13,16 @@ import torch.utils.data as data
 from torch.autograd import Variable
 import torchvision.transforms as transforms
 
+import os
+import sys
+import numpy as np
+import pandas as pd
 from PIL import Image
 import numpy.random as random
 if sys.version_info[0] == 2:
     import cPickle as pickle
 else:
     import pickle5 as pickle
-
 
 def prepare_data(data):
     imgs, captions, captions_lens, class_ids, keys = data
