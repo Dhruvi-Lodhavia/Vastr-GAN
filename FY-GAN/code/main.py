@@ -1,3 +1,13 @@
+from __future__ import print_function
+
+from miscc.utils import mkdir_p
+from miscc.config import cfg, cfg_from_file
+
+from datasets import TextDataset
+from datasets import prepare_data
+
+from DAMSM import RNN_ENCODER
+
 import os
 import sys
 import time
@@ -17,16 +27,6 @@ import torch.backends.cudnn as cudnn
 import torchvision.transforms as transforms
 from model import NetG,NetD
 import torchvision.utils as vutils
-
-from __future__ import print_function
-
-from miscc.utils import mkdir_p
-from miscc.config import cfg, cfg_from_file
-
-from datasets import TextDataset
-from datasets import prepare_data
-
-from DAMSM import RNN_ENCODER
 
 dir_path = (os.path.abspath(os.path.join(os.path.realpath(__file__), './.')))
 sys.path.append(dir_path)
