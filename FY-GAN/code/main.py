@@ -94,7 +94,7 @@ def sampling(text_encoder, netG, dataloader,device,f,filename,model_dir):
 
 ###For generating images for training dataset
 def train(dataloader,netG,netD,text_encoder,optimizerG,optimizerD,state_epoch,batch_size,device):
-    #loss_file = open("./FY-GAN/losses8.txt", "w+")
+    loss_file = open("./FY-GAN/losses8.txt", "w+")
     for epoch in range(state_epoch+1, cfg.TRAIN.MAX_EPOCH+1):    
         for step, data in enumerate(dataloader, 0):
             imags, captions, cap_lens, class_ids, keys = prepare_data(data)
