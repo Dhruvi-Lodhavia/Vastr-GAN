@@ -25,7 +25,7 @@ https://github.com/Dhruvi-Lodhavia/Vastr-GAN.git
 ```
 
 ### Datasets Preparation
-  - Our Dataset consists of images and their corresponding descriptions of 9 categories present in Indian Fashion :
+  - Our Indian Fashion Dataset consists of images and their corresponding descriptions divided into 9 categories :
     - Kurta
     - Kurti
     - Nehru Jacket
