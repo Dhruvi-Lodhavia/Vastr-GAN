@@ -20,12 +20,12 @@
 
 Clone this repo.
 ```
-git clone https://github.com/Dhruvi-Lodhavia/Text-to-Image-Synthesis-for-Indian-Fashion-Dataset
+https://github.com/Dhruvi-Lodhavia/Vastr-GAN.git
 
 ```
 
 ### Datasets Preparation
-  - Download the preprocessed metadata for [fashion](https://drive.google.com/file/d/1qWlIsyemCFMJ0STP6DANX5lduSPtYtFF/view?usp=sharing) and save them to `data/`
+  - Download the preprocessed metadata for [fashion](https://drive.google.com/file/d/16HmE7I4GR3aapGRhSQTy7UETTiyYyfxE/view?usp=sharing) and save them to `data/`
 
 
 ### Pre processing data
