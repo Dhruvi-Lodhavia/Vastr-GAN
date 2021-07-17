@@ -1,12 +1,12 @@
 # Text-to-Image Synthesis For Indian Fashion Dataset
 
-## DF_GAN MODEL
+## Text-to-image synthesis 
 
-<img src="framework.jpg" width="900px" height="448px"/>
+<img src="teaser image.JPG" width="900px" height="448px"/>
 
-## YOLO CLASSIFICATION
+## Vastr-GAN pipeline
 
-<img src="yolo.jpg" /> 
+<img src="ensemble_fig.JPG" /> 
 
 ---
 ### Requirements
@@ -75,6 +75,11 @@ https://github.com/Dhruvi-Lodhavia/Vastr-GAN.git
 ```
 
 ---
+
+**Results**
+
+Results obtained after testing are - 
+<img src="results.JPG" /> 
 
 **Reference**
 
