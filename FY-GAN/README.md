@@ -2,7 +2,7 @@
 
 ## Text-to-image synthesis 
 
-<img src="Images\teaser image.JPG" width="900px" height="448px"/>
+<img src="Images\teaser image.JPG" />
 
 ## Vastr-GAN pipeline
 
