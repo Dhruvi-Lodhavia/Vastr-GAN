@@ -25,6 +25,16 @@ https://github.com/Dhruvi-Lodhavia/Vastr-GAN.git
 ```
 
 ### Datasets Preparation
+  - Our Dataset consists of images and their corresponding descriptions of 9 categories present in Indian Fashion :
+    - Kurta
+    - Kurti
+    - Nehru Jacket
+    - Shirt
+    - T-shirt
+    - Skirt
+    - Short
+    - Pant
+    - Jeans
   - Download the preprocessed metadata for [fashion](https://drive.google.com/file/d/16HmE7I4GR3aapGRhSQTy7UETTiyYyfxE/view?usp=sharing) and save them to `data/`
 
 
