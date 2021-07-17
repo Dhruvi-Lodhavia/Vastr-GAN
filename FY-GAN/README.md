@@ -6,7 +6,7 @@
 
 ## Vastr-GAN pipeline
 
-<img src="Images\ensemble_fig.JPG" /> 
+<img src="Images\ensemble_fig.PNG" /> 
 
 ---
 ### Requirements
