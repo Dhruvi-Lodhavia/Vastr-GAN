@@ -2,11 +2,11 @@
 
 ## Text-to-image synthesis 
 
-<img src="teaser image.JPG" width="900px" height="448px"/>
+<img src="Images\teaser image.JPG" width="900px" height="448px"/>
 
 ## Vastr-GAN pipeline
 
-<img src="ensemble_fig.JPG" /> 
+<img src="Images\ensemble_fig.JPG" /> 
 
 ---
 ### Requirements
@@ -79,7 +79,7 @@ https://github.com/Dhruvi-Lodhavia/Vastr-GAN.git
 **Results**
 
 Results obtained after testing are - 
-<img src="results.JPG" /> 
+<img src="Images\results.JPG" /> 
 
 **Reference**
 
